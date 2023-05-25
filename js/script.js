@@ -292,10 +292,36 @@ let f = document.querySelectorAll(".film")
 let b = document.querySelectorAll(".button")
 let current=0
 let pmax=0
-
+for (var flms of f) {
+  fpos=flms.getBoundingClientRect()
+  if (fpos.x <= 250) {
+    console.log('a');
+    flms.style.visibility = 'hidden'
+  } else {
+    flms.style.visibility = 'visible'
+  }
+  if (fpos.x >= 1250) {
+    flms.style.visibility = 'hidden'
+  } else {
+    flms.style.visibility = 'visible'
+  }
+}
 for (var butt of b) {
   butt.onclick = function(e){
-
+    for (var flm of f) {
+      fpos=flm.getBoundingClientRect()
+      if (fpos.x <= 250) {
+        console.log('a');
+        flm.style.visibility = 'hidden'
+      } else {
+        flm.style.visibility = 'visible'
+      }
+      if (fpos.x >= 1250) {
+        flm.style.visibility = 'hidden'
+      } else {
+        flm.style.visibility = 'visible'
+      }
+    }
     if (e.srcElement.children[0].className == "fas fa-angle-left") {
       pmax=pmax-50
       for (var i = 0; i < e.srcElement.parentElement.parentElement.children.length-1; i++) {
@@ -307,9 +333,6 @@ for (var butt of b) {
         for (var i = 0; i < e.srcElement.parentElement.parentElement.children.length-1; i++) {
           e.srcElement.parentElement.parentElement.children[i].style.transform = 'translateX('+pmax+'%)'
         }
-
-
     }
-
 }
 }
