@@ -15,7 +15,6 @@ m[0].style.display = "none";
 m[0].style.transition = "display 1s ease-in-out"
 
 
-azert()
 function azert() {
 
   for (var i = 1; i < 6; i++) {
@@ -193,7 +192,6 @@ function azert() {
 
 for (var l of flm) {
   l.onclick = function(e){
-    if (e.srcElement.parentElement.className == "film act"){
       mc[0].innerHTML = ""
       m[0].style.display = "block";
       m[0].style.transition = "display 1s ease-in-out"
@@ -217,7 +215,6 @@ for (var l of flm) {
       country = mc[0].appendChild(document.createElement("p"));
       boxOffice = mc[0].appendChild(document.createElement("p"));
       resume = mc[0].appendChild(document.createElement("p"));
-
       img.src = a.image_url
       title.innerHTML = "<p>Titre :  </p>" + a.title;
       original.innerHTML = "<p>Titre original :  </p>" + a.original_title
@@ -229,13 +226,13 @@ for (var l of flm) {
       actors.innerHTML = "<p>Acteurs :  </p>" + a.actors
       lenght.innerHTML = "<p>Durée :  </p>" + a.duration + "<p>min</p>"
       country.innerHTML = "<p>Pays :  </p>" + a.countries
-      boxOffice.innerHTML = "<p>Résultats Box Office :  </p>" + a.reviews_from_critics
+      boxOffice.innerHTML = "<p>Résultats Box Office :  </p>" + a.worldwide_gross_income
       resume.innerHTML = "<p>Résumé :  </p>" + a.long_description
 
     })
     }
   }
-}
+
 
 bm[0].onclick = function(e){
   mc[0].innerHTML = ""
@@ -294,37 +291,25 @@ let cs = document.querySelectorAll(".carrousel")
 let f = document.querySelectorAll(".film")
 let b = document.querySelectorAll(".button")
 let current=0
+let pmax=0
 
 for (var butt of b) {
   butt.onclick = function(e){
-    for (var i = 0; i < e.srcElement.parentElement.parentElement.children.length-2; i++) {
-      if (e.srcElement.parentElement.parentElement.children[i].classList[1] == "act") {
-        current = i
-        last = i+3
-        next = i+4
-        previous = i-1
-        if (next>6) {
-          next=0
-        }
-        if (previous<0) {
-          previous=6
-        }
-      }
-    }
 
     if (e.srcElement.children[0].className == "fas fa-angle-left") {
-      e.srcElement.parentElement.parentElement.children[previous].classList.remove("pre")
-      e.srcElement.parentElement.parentElement.children[current].classList.remove("act")
-      e.srcElement.parentElement.parentElement.children[next].classList.remove("nxt")
-      e.srcElement.parentElement.parentElement.children[previous-1].classList.add("pre")
-      e.srcElement.parentElement.parentElement.children[current-1].classList.add("act")
-      e.srcElement.parentElement.parentElement.children[next-1].classList.add("nxt")
+      pmax=pmax-50
+      for (var i = 0; i < e.srcElement.parentElement.parentElement.children.length-1; i++) {
+        e.srcElement.parentElement.parentElement.children[i].style.transform = 'translateX('+pmax+'%)'
+      }
+
     } else {
-      e.srcElement.parentElement.parentElement.children[previous].classList.remove("pre")
-      e.srcElement.parentElement.parentElement.children[current].classList.remove("act")
-      e.srcElement.parentElement.parentElement.children[next].classList.remove("nxt")
-      e.srcElement.parentElement.parentElement.children[previous+1].classList.add("pre")
-      e.srcElement.parentElement.parentElement.children[current+1].classList.add("act")
-      e.srcElement.parentElement.parentElement.children[next+1].classList.add("nxt")
+      pmax=pmax+50
+        for (var i = 0; i < e.srcElement.parentElement.parentElement.children.length-1; i++) {
+          e.srcElement.parentElement.parentElement.children[i].style.transform = 'translateX('+pmax+'%)'
+        }
+
+
     }
+
+}
 }

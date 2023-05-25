@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>JustStreamIt</title>
   </head>
-  <body>
+  <body onload="azert()">
     <header class="flex stick menu">
       <img src="images\website_images\title_logo.png" alt="logo">
       <div class="container">
@@ -17,86 +17,88 @@
               <button type="button" name="update" onclick="azert()">Valider</button>
             </div>
         </div>
-
-        <div class="dateSelector">
+        <nav>
+          <input type="text" name="search" placeholder="Search...">
+        </nav>
+        <!--div class="dateSelector">
           <input type="number" min="1900" max="2100" step="1" name="year" value="1995">
-        </div>
+        </div-->
       </div>
 
 
     </header>
-    <div class="best_movie">
+    <section class="best_movie">
       <h1></h1>
       <img src="" alt="" class="bm_img">
       <p></p>
-    </div>
+    </section>
 
-    <div class="cat0">
+    <section class="cat0">
       <h1>Meilleurs films toutes catégories</h1>
       <ul class="carrousel">
-        <li class="film act"></li>
-        <li class="film act"></li>
-        <li class="film act"></li>
-        <li class="film act"></li>
-        <li class="film nxt"></li>
         <li class="film"></li>
-        <li class="film pre"></li>
+        <li class="film"></li>
+        <li class="film"></li>
+        <li class="film"></li>
+        <li class="film "></li>
+        <li class="film"></li>
+        <li class="film "></li>
         <div class="btns">
           <div class="button"><i class="fas fa-angle-left"></i></div>
   			  <div class="button"><i class="fas fa-angle-right"></i></div>
         </div>
       </ul>
 
-    </div>
-    <div class="cat1">
+    </section>
+    <section class="cat1">
       <h1></h1>
       <ul class="carrousel">
-        <li class="film act"></li>
-        <li class="film nxt"></li>
         <li class="film"></li>
         <li class="film"></li>
         <li class="film"></li>
         <li class="film"></li>
-        <li class="film pre"></li>
+        <li class="film "></li>
+        <li class="film"></li>
+        <li class="film "></li>
         <div class="btns">
           <div class="button"><i class="fas fa-angle-left"></i></div>
           <div class="button"><i class="fas fa-angle-right"></i></div>
         </div>
       </ul>
 
-    </div>
-    <div class="cat2">
+    </section>
+    <section class="cat2">
       <h1></h1>
       <ul class="carrousel">
-        <li class="film act"></li>
-        <li class="film nxt"></li>
         <li class="film"></li>
         <li class="film"></li>
         <li class="film"></li>
         <li class="film"></li>
-        <li class="film pre"></li>
+        <li class="film "></li>
+        <li class="film"></li>
+        <li class="film "></li>
         <div class="btns">
           <div class="button"><i class="fas fa-angle-left"></i></div>
           <div class="button"><i class="fas fa-angle-right"></i></div>
         </div>
       </ul>
-    </div>
-    <div class="cat3">
+    </section>
+    <section class="cat3">
       <h1></h1>
       <ul class="carrousel">
-        <li class="film act"></li>
-        <li class="film nxt"></li>
         <li class="film"></li>
         <li class="film"></li>
         <li class="film"></li>
         <li class="film"></li>
-        <li class="film pre"></li>
+        <li class="film "></li>
+        <li class="film"></li>
+        <li class="film "></li>
         <div class="btns">
           <div class="button"><i class="fas fa-angle-left"></i></div>
           <div class="button"><i class="fas fa-angle-right"></i></div>
         </div>
       </ul>
-    </div>
+    </section>
     <div class="modal">
       <span class="btnclose stick">&times;</span>
       <div class="modal_content"></div>
