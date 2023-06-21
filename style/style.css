@@ -11,10 +11,7 @@ body, html{
   height: 100%;
   margin: auto;
 }
-ul{
-  display: flex;
-  flex-direction: row;
-}
+
 li{
     list-style: none;
     width: min-content;
@@ -103,6 +100,8 @@ li h2 {
   background-image:linear-gradient(180deg, #00000000, rgb(255 255 255)), linear-gradient(90deg, #f50000, rgb(0 0 0));
 }
 
+
+
 .menu img{
   width : 15%;
 }
@@ -168,58 +167,55 @@ li h2 {
 
 .btnclose{
   color: #aaa;
-  background-color: rgb(255, 0, 0);
-  float: right;
-  font-size: 125px;
-  font-weight: bold;
-  cursor: pointer;
+    background-color: rgb(255, 0, 0);
+    float: right;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right:10%;
 }
 
 .carrousel{
-  padding: 0;
-transform: translate(30%, 0%);
-user-select: none;
+  overflow: hidden;
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      transform: translate(50%, 0%);
+      user-select: none;
+      align-content: center;
+      justify-content: space-between;
 }
 
 .carrousel .film{
-  overflow: hidden;
   transition: all 300ms ease-in-out;
-  z-index: -1;
+  z-index: 1;
 }
 
-.carrousel .btns{
-position: absolute;
-top: 50%;
-transform: translate(-20%, -50%);
-width: 70%;
-z-index: 100;
-}
-
-.btns .button{
-  color: #f00;
-    font-size: 170px;
-    cursor: pointer;
-    position: relative;
-    opacity: 0.75;
-    transition: all 300ms ease-in-out;
-}
-
-.btns .button:nth-child(1){
-  float: left;
-}
-.btns .button:nth-child(2){
-  float: right;
-}
-
-.btns .button:before{
-  content: "";
+section .btns{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-70%, -50%);
-  width: 200px;
-  height: 290px;
-  background-color: rgba(0, 0, 0, 1);
-  border-radius: 5%;
-  z-index: -99;
+  width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+}
+
+.navbutton{
+  position: relative;
+  padding: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 76px;
+}
+.navbutton:nth-child(1){
+  transform: translate(100%,-140%);
+}
+.navbutton:nth-child(2){
+  transform: translate(-100%,-140%);
+}
+.navbutton:hover{
+  border-radius: 10%;
+  background-color: rgba(55, 0, 0, 0.5);
 }
